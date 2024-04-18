@@ -123,21 +123,14 @@ export class TcpInitiator extends FixInitiator {
           tlsSocket = tlsConnect(connectionOptions, () => {
             if (!tlsSocket) return null
             this.logger.info(`client connected ${tlsSocket.authorized ? 'authorized' : 'unauthorized'}`)
-            if (!tlsSocket.authorized) {
-              const error = tlsSocket.authorizationError
-              this.logger.warning(`rejecting from state ${this.state} authorizationError ${error}`)
-              tlsSocket.end()
-              reject(error)
-            } else {
-              tlsSocket.setEncoding('utf8')
-              const tlsDuplex = new TcpDuplex(tlsSocket)
-              if (tcp?.tls?.enableTrace) {
-                this.logger.info('enabling tls session trace')
-                tlsSocket.enableTrace()
-              }
-              this.logger.info('tlsDuplex resolving')
-              resolve(tlsDuplex)
+            tlsSocket.setEncoding('utf8')
+            const tlsDuplex = new TcpDuplex(tlsSocket)
+            if (tcp?.tls?.enableTrace) {
+              this.logger.info('enabling tls session trace')
+              tlsSocket.enableTrace()
             }
+            this.logger.info('tlsDuplex resolving')
+            resolve(tlsDuplex)
           })
           tlsSocket.on('error', (err) => {
             reject(err)

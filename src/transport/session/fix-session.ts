@@ -297,6 +297,7 @@ export abstract class FixSession extends events.EventEmitter {
   }
 
   protected send (msgType: string, obj: ILooseObject): void {
+    this.sessionLogger.info(`sending msg type ${msgType}: ${JSON.stringify(obj)}`)
     const state = this.sessionState.state
     switch (state) {
       case SessionState.Stopped: {
