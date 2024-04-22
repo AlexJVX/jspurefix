@@ -100,7 +100,7 @@ export class AsciiEncoder extends MsgEncoder {
   private encodeInstances (o: ILooseObject, gf: ContainedGroupField): void {
     const noOfField: SimpleFieldDefinition | null = gf.definition.noOfField
     if (!noOfField) return
-    const instances: ILooseObject[] = o[gf.name] || o[noOfField.name]
+    const instances: ILooseObject[] = o[gf.name]?.[noOfField.name] || o[noOfField.name]
 
     const buffer = this.buffer
     if (!Array.isArray(instances)) {

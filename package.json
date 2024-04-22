@@ -1,6 +1,6 @@
 {
-  "name": "jvx-jspurefix",
-  "version": "3.5.0",
+  "name": "jvxpurefix",
+  "version": "3.5.1",
   "description": "pure node js fix engine",
   "keywords": [
     "typescript",
