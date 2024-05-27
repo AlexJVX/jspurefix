@@ -9,7 +9,7 @@ import { DITokens } from './di-tokens'
 const defaultLoggerFactory = new JsFixWinstonLogFactory(WinstonLogger.consoleOptions('info'))
 
 export abstract class SessionLauncher {
-  public root: string = '../../'
+  public root: string = '/'
   protected readonly logger: IJsFixLogger
   public readonly initiatorConfig: ISessionDescription | null
   public readonly acceptorConfig: ISessionDescription | null

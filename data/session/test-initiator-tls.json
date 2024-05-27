@@ -4,30 +4,27 @@
     "type": "initiator",
     "name": "test_client",
     "tcp": {
-      "host" : "localhost",
-      "port": 2344,
+      "host": "host",
+      "port": 10062,
       "tls": {
         "timeout": 10000,
         "sessionTimeout": 10000,
         "enableTrace": true,
-        "key": "data/session/certs/client/client.key",
-        "cert": "data/session/certs/client/client.crt",
-        "ca": [
-          "data/session/certs/ca/ca.crt"
-        ]
+        "nodeTlsConnectionOptions": {
+          "requestCert": false,
+          "rejectUnauthorized": false
+        }
       }
     },
     "protocol": "ascii",
     "dictionary": "repo44"
   },
-  "Username": "js-tls-client",
-  "Password": "pwd-tls-client",
+  "Password": "Password",
   "EncryptMethod": 0,
   "ResetSeqNumFlag": true,
   "HeartBtInt": 30,
-  "SenderCompId": "init-tls-comp",
-  "TargetCompID": "accept-tls-comp",
-  "TargetSubID": "fix",
+  "SenderCompId": "SenderCompId",
+  "TargetCompID": "TargetCompID",
   "BeginString": "FIX.4.4",
-  "BodyLengthChars": 6
+  "BodyLengthChars": 0
 }

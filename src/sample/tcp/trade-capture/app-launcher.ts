@@ -4,11 +4,10 @@ import { TradeCaptureClient } from './trade-capture-client'
 import { TradeCaptureServer } from './trade-capture-server'
 
 export class AppLauncher extends SessionLauncher {
-  public constructor (client: string = 'data/session/test-initiator.json',
-    server: string = 'data/session/test-acceptor.json') {
+  public constructor (client: string = 'data/session/test-initiator.json') {
     super(
       client,
-      server)
+      null)
   }
 
   protected override makeFactory (config: IJsFixConfig): EngineFactory {
