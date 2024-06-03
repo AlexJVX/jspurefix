@@ -1,6 +1,6 @@
 {
   "name": "jvxpurefix",
-  "version": "3.5.3",
+  "version": "3.5.5",
   "description": "pure node js fix engine",
   "keywords": [
     "typescript",
@@ -26,6 +26,7 @@
     "circular": "madge --circular --extensions js dist && madge --circular --extensions ts src",
     "test": "jest --maxWorkers=1 --coverage",
     "build": "tsc",
+    "prepublish": "npm run build",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "cmd": "node dist/jsfix-cmd",
     "trim44": "node dist/jsfix-cmd  --dict=qf44 --trim --type=\"0,1,2,3,4,5,AE\"",

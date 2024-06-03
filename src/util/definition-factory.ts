@@ -7,7 +7,7 @@ import { FixXsdParser, QuickFixXmlFileParser, RepositoryXmlParser } from '../dic
 import { IDictionaryPath } from './dictionary-path'
 import { FileDuplex } from '../transport'
 
-const root: string = path.join(__dirname, '../../')
+const root: string = path.join(__dirname)
 
 export class DefinitionFactory {
   getDictPath (p: string): IDictionaryPath {
